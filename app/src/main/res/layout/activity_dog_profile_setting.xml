@@ -9,55 +9,64 @@
 
     <ImageView
         android:id="@+id/imageView_puppy"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_marginTop="32dp"
+        android:layout_width="190dp"
+        android:layout_height="190dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="46dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:src="@drawable/puppy_logo"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/puppy_logo" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btn_imageUpload"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="사진 선택하기"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView_puppy" />
-
-    <TextView
-        android:id="@+id/write_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="강아지 이름을 적어주세요"
+        android:layout_marginTop="8dp"
+        android:text="사진 선택하기"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_imageUpload" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView_puppy" />
 
     <EditText
         android:id="@+id/puppy_name"
         android:layout_width="150dp"
         android:layout_height="48dp"
+        android:layout_marginTop="8dp"
         android:hint="Puppy Name"
         android:textColorHint="#7FB0E4"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.528"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/write_name" />
+
+    <TextView
+        android:id="@+id/write_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="328dp"
+        android:text="강아지 이름을 적어주세요"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.527"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="432dp"
         android:text="강아지 종류를 선택해주세요"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/puppy_name" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <RadioGroup
         android:id="@+id/radioGroup_dog_breed"
@@ -72,19 +81,19 @@
             android:id="@+id/radioButton_maltese"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Maltese" />
+            android:text="말티즈" />
 
         <RadioButton
             android:id="@+id/radioButton_pomeranian"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Pomeranian" />
+            android:text="포메라니언" />
 
         <RadioButton
             android:id="@+id/radioButton_yorkshire_terrier"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Yorkshire terrier" />
+            android:text="요크셔테리어" />
 
     </RadioGroup>
 
@@ -93,8 +102,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="등록하기"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="623dp" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.938" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
