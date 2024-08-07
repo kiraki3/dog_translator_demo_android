@@ -9,21 +9,29 @@
 
     <ImageView
         android:id="@+id/iv_logo"
-        android:layout_width="349dp"
-        android:layout_height="294dp"
+        android:layout_width="230.4dp"
+        android:layout_height="227dp"
         android:layout_marginTop="124dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/puppy_logo" />
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="428dp"
+        android:text="안녕하세요\n강아지 번역기 입니다."
+        android:textAlignment="center"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <Button
         android:id="@+id/btn_start"
         android:layout_width="191dp"
         android:layout_height="54dp"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="556dp"
         android:text="시작하기"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_logo" />
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
