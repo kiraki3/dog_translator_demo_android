@@ -18,6 +18,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -39,7 +40,7 @@ public class DogProfileResultActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String puppyName = intent.getStringExtra("PUPPY_NAME");
         String selectedBreed = intent.getStringExtra("selected_breed");
-        String imageUriString = intent.getStringExtra("imageUri");
+        Uri imageUri = intent.getParcelableExtra("imageUri");
 
         // Set puppy name
         puppyNameTextView = findViewById(R.id.puppy_name_text_view);
@@ -54,16 +55,16 @@ public class DogProfileResultActivity extends AppCompatActivity {
         // Set Image
         ImageView imageView = findViewById(R.id.user_imageView_puppy);
         // Find image uri
-        Log.e("DogProfileResultActivity", "Selected Image URI: " + imageUriString);
-        if (imageUriString != null) {
+        Log.e("DogProfileResultActivity", "Selected Image URI: " + imageUri);
+
+        if (imageUri != null) {
             try {
-                Uri imageUri = Uri.parse(imageUriString);
-                Log.d("DogProfileResultActivity", "Selected Image URI: " + imageUri.toString());
+                // Load the selected image into the ImageView
                 Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), imageUri);
                 imageView.setImageBitmap(bitmap);
-            } catch (IOException e) {
+            } catch (Exception e) {
                 e.printStackTrace();
-                Log.e("DogProfileResultActivity", "Failed to load image: " + e.getMessage());
+                // Load default image if there's an error
                 imageView.setImageResource(R.drawable.puppy_logo);
             }
         } else {

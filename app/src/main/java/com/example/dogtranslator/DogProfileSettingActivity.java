@@ -43,38 +43,40 @@ public class DogProfileSettingActivity extends AppCompatActivity {
         });
 
         // Initialize views
-        btnImageUpload = findViewById(R.id.btn_imageUpload);
-        btnRegister = findViewById(R.id.btn_register);
-        puppyName = findViewById(R.id.puppy_name);
-        imageViewPuppy = findViewById(R.id.imageView_puppy);
-        radioGroupDogBreed = findViewById(R.id.radioGroup_dog_breed);
+        btnImageUpload = findViewById(R.id.btn_imageUpload);  // 이미지등록 버튼
+        btnRegister = findViewById(R.id.btn_register);        // 등록하기 버튼
+        puppyName = findViewById(R.id.puppy_name);            // 강아지 이름
+        imageViewPuppy = findViewById(R.id.imageView_puppy);  // 이미지 뷰
+        radioGroupDogBreed = findViewById(R.id.radioGroup_dog_breed); // 강아지 종류 라디오 그룹
 
         // Set default image
-        imageViewPuppy.setImageResource(R.drawable.puppy_logo);
+        imageViewPuppy.setImageResource(R.drawable.puppy_logo); // 로고 이미지를 기본으로 설정
 
         // Set an OnClickListener for the "Image Upload" button
-        btnImageUpload.setOnClickListener(new View.OnClickListener() {
+        btnImageUpload.setOnClickListener(new View.OnClickListener() {   // 이미지등록 버튼을 클릭하면 일어나는 현상
             @Override
             public void onClick(View view) {
                 // Create an Intent to pick an image from the gallery
-                Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                startActivityForResult(intent, PICK_IMAGE_REQUEST);
-
+                Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);  // 버튼을 누르면 단말의 갤러리(MediaStore)로 넘어간다.
+                startActivityForResult(intent, PICK_IMAGE_REQUEST);     // 이미지를 선택한다면, 한가지 이미지를 택했다는걸 PICK_IMAGE_REQUEST에 담아서 onActivityResult클래스하고 연결시킨다.
             }
         });
 
 
         // Sets an OnClickListener for the "Register" button
-        btnRegister.setOnClickListener(new View.OnClickListener() {
+        btnRegister.setOnClickListener(new View.OnClickListener() {             // 등록하기 버튼을 눌렀을 때 현상
             @Override
             public void onClick(View view) {
                 // Get user's puppy name
-                Intent intent = new Intent(DogProfileSettingActivity.this, DogProfileResultActivity.class);
+                Intent intent = new Intent(DogProfileSettingActivity.this, DogProfileResultActivity.class);   // 현재 페이지에서 DogProfileResultActivity페이지로 이동한다.
+
+                Log.e("DogProfileSettingActivity", "imageURI : " + imageUri);         // 이미지 URI
 
                 // Get image URI
                 if (imageUri != null) {
                     // Add image to the Intent
-                    intent.putExtra("imageUri", imageUri.toString());
+                    intent.putExtra("imageUri", imageUri);
+                 //   intent.putExtra("imageUri", imageUri);
 
                 }
 
@@ -113,8 +115,8 @@ public class DogProfileSettingActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null) {
-            Uri imageUri = data.getData();
-            Log.d("DogProfileSettingActivity", "Selected Image URI: " + imageUri.toString());
+            imageUri = data.getData();
+            Log.d("DogProfileSettingActivity", "Selected Image URI: " + imageUri);
             try {
                 // Load the selected image into the ImageView
                 Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), imageUri);
