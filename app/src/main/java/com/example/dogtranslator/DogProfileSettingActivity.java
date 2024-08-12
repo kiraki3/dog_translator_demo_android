@@ -31,8 +31,6 @@ public class DogProfileSettingActivity extends AppCompatActivity {
     private EditText puppyName;
     private RadioGroup radioGroupDogBreed;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,7 +69,7 @@ public class DogProfileSettingActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 // Get user's puppy name
-                Intent intent = new Intent(DogProfileSettingActivity.this, AnalysisActivity.class);
+                Intent intent = new Intent(DogProfileSettingActivity.this, DogProfileResultActivity.class);
 
                 // Get image URI
                 if (imageUri != null) {
@@ -79,13 +77,14 @@ public class DogProfileSettingActivity extends AppCompatActivity {
                     intent.putExtra("imageUri", imageUri.toString());
 
                 }
-                String name = puppyName.getText().toString().trim();
 
                 // Check if the puppy name is empty
+                String name = puppyName.getText().toString().trim();
                 if (name.isEmpty()) {
                     Toast.makeText(DogProfileSettingActivity.this, "강아지 이름을 입력해 주세요.", Toast.LENGTH_SHORT).show();
                     return; // Stop further execution
                 }
+
                 // Add puppy name to the Intent
                 intent.putExtra("PUPPY_NAME", name);
 
@@ -105,8 +104,7 @@ public class DogProfileSettingActivity extends AppCompatActivity {
                     // Add selected breed to the Intent
                     intent.putExtra("selected_breed", selectedBreed);
                     startActivity(intent);
-                }
-
+                    }
                 }
         });
     }
