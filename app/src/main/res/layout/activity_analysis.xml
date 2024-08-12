@@ -9,30 +9,74 @@
     <!--업로드한 사진-->
     <!--없으면 기본 이미지-->
 
+    <!--등록한 강아지 이름-->
+
+    <!-- 등록한 강아지 종류 -->
+
     <ImageView
-        android:id="@+id/imageView_puppy"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_marginTop="16dp"
+        android:id="@+id/user_imageView_puppy"
+        android:layout_width="190dp"
+        android:layout_height="190dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="46dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:src="@drawable/puppy_logo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/puppy_logo" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <!--등록한 강아지 이름-->
+    <TextView
+        android:id="@+id/dog_name"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="308dp"
+        android:gravity="center"
+        android:text="이름"
+        android:textAlignment="center"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/puppy_name_text_view"
         android:layout_width="150dp"
         android:layout_height="40dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="308dp"
         android:gravity="center"
         android:text="업동이"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toEndOf="@+id/dog_name"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/dog_breed"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="364dp"
+        android:gravity="center"
+        android:text="종류"
+        android:textAlignment="center"
+        android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView_puppy" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/selected_breed"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="364dp"
+        android:gravity="center"
+        android:text="말티즈"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/dog_breed"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <!--녹음 버튼-->
@@ -44,16 +88,16 @@
 
     <!--분석하기-->
 
-    <Button
-        android:id="@+id/btn_analysisResult"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="484dp"
-        android:text="분석하기"
-        app:icon="@drawable/baseline_mic_24"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <!--    <Button-->
+    <!--        android:id="@+id/btn_record"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="484dp"-->
+    <!--        android:text="분석하기"-->
+    <!--        app:icon="@drawable/baseline_mic_24"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.498"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

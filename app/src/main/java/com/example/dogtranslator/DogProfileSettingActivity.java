@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -12,7 +13,6 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.Nullable;
@@ -30,7 +30,7 @@ public class DogProfileSettingActivity extends AppCompatActivity {
     private Button btnImageUpload, btnRegister;
     private EditText puppyName;
     private RadioGroup radioGroupDogBreed;
-    private RadioButton selectedRadioButton;
+
 
 
     @Override
@@ -65,22 +65,48 @@ public class DogProfileSettingActivity extends AppCompatActivity {
             }
         });
 
-        // radioGroupDogBreed Button
-        radioGroupDogBreed.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
 
         // Sets an OnClickListener for the "Register" button
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String name = puppyName.getText().toString().trim();
+                // Get user's puppy name
                 Intent intent = new Intent(DogProfileSettingActivity.this, AnalysisActivity.class);
+
+                // Get image URI
+                if (imageUri != null) {
+                    // Add image to the Intent
+                    intent.putExtra("imageUri", imageUri.toString());
+
+                }
+                String name = puppyName.getText().toString().trim();
+
+                // Check if the puppy name is empty
+                if (name.isEmpty()) {
+                    Toast.makeText(DogProfileSettingActivity.this, "강아지 이름을 입력해 주세요.", Toast.LENGTH_SHORT).show();
+                    return; // Stop further execution
+                }
+                // Add puppy name to the Intent
                 intent.putExtra("PUPPY_NAME", name);
-                startActivity(intent);
+
+                // Get The ID of The selected RadioButton
+                int selectedId = radioGroupDogBreed.getCheckedRadioButtonId();
+
+                // Check if no RadioButton is selected
+                if (selectedId == -1) {
+                    Toast.makeText(DogProfileSettingActivity.this, "강아지 종류를 선택해 주세요.", Toast.LENGTH_SHORT).show();
+                } else {
+                    // Get the selected ID
+                    RadioButton selectedRadioButton = findViewById(selectedId);
+
+                    // Get the text of the selected RadioButton
+                    String selectedBreed = selectedRadioButton.getText().toString();
+
+                    // Add selected breed to the Intent
+                    intent.putExtra("selected_breed", selectedBreed);
+                    startActivity(intent);
+                }
+
                 }
         });
     }
@@ -90,12 +116,15 @@ public class DogProfileSettingActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null) {
             Uri imageUri = data.getData();
+            Log.d("DogProfileSettingActivity", "Selected Image URI: " + imageUri.toString());
             try {
                 // Load the selected image into the ImageView
                 Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), imageUri);
                 imageViewPuppy.setImageBitmap(bitmap);
             } catch (Exception e) {
                 e.printStackTrace();
+                // Load default image if there's an error
+                imageViewPuppy.setImageResource(R.drawable.puppy_logo);
             }
         }
     }
