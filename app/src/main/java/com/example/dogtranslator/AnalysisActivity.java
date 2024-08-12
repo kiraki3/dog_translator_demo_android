@@ -71,5 +71,15 @@ public class AnalysisActivity extends AppCompatActivity {
             imageView.setImageResource(R.drawable.puppy_logo);
         }
 
+        // Click the back button to return to the previous page.
+        Button btnRewrite = findViewById(R.id.btn_rewrite_profile);
+        btnRewrite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AnalysisActivity.this, DogProfileSettingActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 }

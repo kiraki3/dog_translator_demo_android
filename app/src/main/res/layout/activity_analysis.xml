@@ -29,11 +29,35 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:id="@+id/puppy_name_text_view"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="272dp"
+        android:gravity="center"
+        android:text="업동이"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/dog_name"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/selected_breed"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="328dp"
+        android:gravity="center"
+        android:text="말티즈"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/dog_breed"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
         android:id="@+id/dog_name"
         android:layout_width="50dp"
         android:layout_height="40dp"
         android:layout_marginStart="108dp"
-        android:layout_marginTop="308dp"
+        android:layout_marginTop="272dp"
         android:gravity="center"
         android:text="이름"
         android:textAlignment="center"
@@ -42,23 +66,11 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/puppy_name_text_view"
-        android:layout_width="150dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="308dp"
-        android:gravity="center"
-        android:text="업동이"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/dog_name"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
         android:id="@+id/dog_breed"
         android:layout_width="50dp"
         android:layout_height="40dp"
         android:layout_marginStart="108dp"
-        android:layout_marginTop="364dp"
+        android:layout_marginTop="328dp"
         android:gravity="center"
         android:text="종류"
         android:textAlignment="center"
@@ -66,17 +78,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/selected_breed"
-        android:layout_width="150dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="364dp"
-        android:gravity="center"
-        android:text="말티즈"
-        android:textSize="16sp"
-        app:layout_constraintStart_toEndOf="@+id/dog_breed"
-        app:layout_constraintTop_toTopOf="parent" />
+    <Button
+        android:id="@+id/btn_rewrite_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="프로필 다시 작성하기"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/selected_breed" />
 
 
     <!--녹음 버튼-->
