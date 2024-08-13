@@ -41,7 +41,7 @@ public class AnalysisActivity extends AppCompatActivity {
 
         // Set puppy name in TextView
         if (puppyName != null) {  // 강아지 이름을 제대로 받았다면..
-            puppyNameTextView.setText(puppyName);
+            puppyNameTextView.setText(puppyName + "(이)의 말을 들어봐요.");
         }
 
         // If image URI is available, load image
