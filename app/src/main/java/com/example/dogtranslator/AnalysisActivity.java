@@ -20,17 +20,5 @@ public class AnalysisActivity extends AppCompatActivity {
             return insets;
         });
 
-
-
-        // Click the back button to return to the previous page.
-        Button btnRewrite = findViewById(R.id.btn_rewrite_profile);
-        btnRewrite.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(AnalysisActivity.this, DogProfileSettingActivity.class);
-                startActivity(intent);
-            }
-        });
-
     }
 }

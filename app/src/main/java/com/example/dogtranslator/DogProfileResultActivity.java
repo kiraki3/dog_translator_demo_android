@@ -74,6 +74,15 @@ public class DogProfileResultActivity extends AppCompatActivity {
             imageView.setImageResource(R.drawable.puppy_logo);  // imageUri를 제대로 받지 않았다면, 기본 이미지로 설정
         }
 
+        // Click the back button to return to the previous page.
+        Button btnRewrite = findViewById(R.id.btn_rewrite_profile);
+        btnRewrite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(DogProfileResultActivity.this, DogProfileSettingActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
     }
