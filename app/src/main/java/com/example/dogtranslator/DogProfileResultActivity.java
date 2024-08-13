@@ -51,7 +51,7 @@ public class DogProfileResultActivity extends AppCompatActivity {
         // Set puppy breed
         TextView textViewSelectedBreed = findViewById(R.id.selected_breed); // xml 강아지 종류와 연결
         if (textViewSelectedBreed != null) {  // 강아지 종류를 제대로 받았다면..
-            textViewSelectedBreed.setText(puppyName); //
+            textViewSelectedBreed.setText(selectedBreed); //
         }
 
         // Set Image
