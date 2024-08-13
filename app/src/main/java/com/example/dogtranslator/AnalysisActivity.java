@@ -20,7 +20,5 @@ public class AnalysisActivity extends AppCompatActivity {
             return insets;
         });
 
-
-
     }
 }
