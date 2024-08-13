@@ -5,6 +5,7 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -15,6 +16,9 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class AnalysisResultActivity extends AppCompatActivity {
+
+    private ImageView imageView;
+    private EditText editaAalysisResult;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +32,9 @@ public class AnalysisResultActivity extends AppCompatActivity {
         });
 
         // Get the ImageView for user image
-        ImageView imageView = findViewById(R.id.user_imageView_puppy);
+        imageView = findViewById(R.id.user_imageView_puppy);
+        // Get the EditText for displaying analysis result
+        editaAalysisResult = findViewById(R.id.edit_analysis_result);
 
         // Get the Intent
         Intent intent = getIntent();
