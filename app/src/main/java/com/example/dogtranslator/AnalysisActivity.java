@@ -5,6 +5,8 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -59,5 +61,18 @@ public class AnalysisActivity extends AppCompatActivity {
             // Set default image if no image URI is provided
             imageView.setImageResource(R.drawable.puppy_logo);  // imageUri를 제대로 받지 않았다면, 기본 이미지로 설정
         }
+
+        // Click the button to navigate to AnalysisResult page
+        Button btnToAnalysisResult = findViewById(R.id.btn_toAnalysis_result);
+        btnToAnalysisResult.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               Intent intent = new Intent(AnalysisActivity.this, AnalysisResultActivity.class);
+                intent.putExtra("imageUri", imageUri);
+                intent.putExtra("puppyname", puppyName);
+               startActivity(intent);
+            }
+        });
+
     }
 }
