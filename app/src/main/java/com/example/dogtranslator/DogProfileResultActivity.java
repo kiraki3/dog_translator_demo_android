@@ -84,6 +84,17 @@ public class DogProfileResultActivity extends AppCompatActivity {
             }
         });
 
+        // Click the button to navigate to Analysis page
+        Button btnToAnalysis = findViewById(R.id.btn_toAnalysis);
+        btnToAnalysis.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(DogProfileResultActivity.this, AnalysisActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
 
     }
 }
