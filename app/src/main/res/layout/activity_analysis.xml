@@ -26,7 +26,7 @@
         android:id="@+id/puppy_name_text_view"
         android:layout_width="200dp"
         android:layout_height="40dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="12dp"
         android:gravity="center"
         android:text="업동이의 말을 들어보아요."
         android:textAlignment="center"
@@ -37,14 +37,24 @@
         app:layout_constraintTop_toBottomOf="@+id/user_imageView_puppy" />
 
     <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="강아지의 목소리를 분석한 결과를 확인할 수 있습니다.\n 각 소리가 어떤 의미를 갖는지 알아보세요."
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+    <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
-        android:text="녹음 버튼을 누른 후\n음성 분석 버튼을 눌러주세요."
+        android:layout_marginTop="36dp"
+        android:text="녹음 아이콘을 누른 후\n음성 분석 버튼을 눌러주세요."
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/puppy_name_text_view" />
 
@@ -52,11 +62,23 @@
         android:id="@+id/imageView2"
         android:layout_width="163dp"
         android:layout_height="133dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
         app:srcCompat="@drawable/micimage" />
+
+    <Button
+        android:id="@+id/btn_toAnalysis_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="음성 분석하기"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
