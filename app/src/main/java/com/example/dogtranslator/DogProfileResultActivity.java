@@ -90,6 +90,8 @@ public class DogProfileResultActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(DogProfileResultActivity.this, AnalysisActivity.class);
+                intent.putExtra("imageUri", imageUri);
+                intent.putExtra("puppyname", puppyName);
                 startActivity(intent);
             }
         });
