@@ -41,7 +41,7 @@
         android:layout_width="wrap_content"
         android:layout_height="52dp"
         android:layout_gravity="center"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="28dp"
         android:padding="16dp"
         android:text="분석결과"
         android:textAlignment="center"
@@ -55,12 +55,37 @@
         android:id="@+id/edit_analysis_result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="44dp"
         android:hint="결과를 여기에 표시합니다..."
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/resultTextView" />
+
+    <Button
+        android:id="@+id/btn_back_toAnalysis"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="56dp"
+        android:text="뒤로가기"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_analysis_result" />
+
+    <Button
+        android:id="@+id/btn_back_toHome"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="60dp"
+        android:text="홈으로"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_back_toAnalysis" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
