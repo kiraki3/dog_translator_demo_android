@@ -5,6 +5,8 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -19,6 +21,8 @@ public class AnalysisResultActivity extends AppCompatActivity {
 
     private ImageView imageView;
     private EditText editaAalysisResult;
+    private Button btnBack, btnHome;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,10 +39,15 @@ public class AnalysisResultActivity extends AppCompatActivity {
         imageView = findViewById(R.id.user_imageView_puppy);
         // Get the EditText for displaying analysis result
         editaAalysisResult = findViewById(R.id.edit_analysis_result);
+        // Get the Button for displaying analysis result
+        btnBack = findViewById(R.id.btn_back_toAnalysis);
+        // Get the Button for displaying analysis result
+        btnHome = findViewById(R.id.btn_back_toHome);
 
         // Get the Intent
         Intent intent = getIntent();
-
+        // Get puppy name from Intent
+        String puppyName = intent.getStringExtra("puppyname");
         // Get image URI from Intent
         Uri imageUri = intent.getParcelableExtra("imageUri");
 
@@ -57,5 +66,26 @@ public class AnalysisResultActivity extends AppCompatActivity {
             // Set default image if no image URI is provided
             imageView.setImageResource(R.drawable.puppy_logo);  // imageUri를 제대로 받지 않았다면, 기본 이미지로 설정
         }
+
+        // Click the back button to return to the previous page.
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AnalysisResultActivity.this, AnalysisActivity.class);
+                intent.putExtra("imageUri", imageUri);
+                intent.putExtra("puppyname", puppyName);
+                startActivity(intent);
+            }
+        });
+
+        // Click the Button to navigate to Home.
+        btnHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AnalysisResultActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 }
