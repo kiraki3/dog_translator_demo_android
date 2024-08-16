@@ -40,44 +40,82 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="강아지의 목소리를 분석한 결과를 확인할 수 있습니다.\n 각 소리가 어떤 의미를 갖는지 알아보세요."
+        android:layout_marginTop="536dp"
+        android:text="발바닥을 탭하면 \n분석한 결과를 확인할 수 있습니다. "
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:text="녹음 아이콘을 누른 후\n음성 분석 버튼을 눌러주세요."
+        android:layout_marginTop="24dp"
+        android:text="마이크 버튼을 탭하여 녹음 후\n 재생 버튼을 탭하여 확인해주세요."
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/puppy_name_text_view" />
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="163dp"
-        android:layout_height="133dp"
-        android:layout_marginTop="32dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:srcCompat="@drawable/micimage" />
-
-    <Button
-        android:id="@+id/btn_toAnalysis_result"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:text="음성 분석하기"
+    <ImageButton
+        android:id="@+id/stopPlayButton"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="20dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="재생 중지"
+        android:scaleType="centerInside"
+        android:src="@drawable/stopbutton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <ImageButton
+        android:id="@+id/recordButton"
+        android:layout_width="125dp"
+        android:layout_height="125dp"
+        android:layout_marginTop="4dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="녹음 시작"
+        android:scaleType="centerInside"
+        android:src="@drawable/micimage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <ImageButton
+        android:id="@+id/playButton"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="재생 시작"
+        android:scaleType="centerInside"
+        android:visibility="gone"
+        android:src="@drawable/playbutton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recordButton" />
+
+    <ImageButton
+        android:id="@+id/stopRecordButton"
+        android:layout_width="125dp"
+        android:layout_height="125dp"
+        android:layout_marginTop="4dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="녹음 중지"
+        android:scaleType="centerInside"
+        android:src="@drawable/recordstop"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

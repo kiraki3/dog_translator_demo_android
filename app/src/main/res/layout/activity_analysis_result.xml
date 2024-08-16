@@ -8,23 +8,6 @@
     android:orientation="vertical"
     tools:context=".AnalysisResultActivity">
 
-    <!--강아지 사진-->
-
-    <!--    &lt;!&ndash;강아지 이름&ndash;&gt;-->
-<!--    <TextView-->
-<!--        android:id="@+id/puppy_name_text_view"-->
-<!--        android:layout_width="100dp"-->
-<!--        android:layout_height="50dp"-->
-<!--        android:layout_gravity="center"-->
-<!--        android:layout_marginTop="10dp"-->
-<!--        android:text="업동이"-->
-<!--        android:textAlignment="center"-->
-<!--        android:textSize="25sp"/>-->
-
-    <!--분석한 내용 표시-->
-
-    <!--이전 화면으로 돌아가는 버튼-->
-
     <ImageView
         android:id="@+id/user_imageView_puppy"
         android:layout_width="190dp"
@@ -36,30 +19,58 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ubdong" />
 
+    <ImageButton
+        android:id="@+id/playButton"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="24dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="재생 버튼"
+        android:scaleType="centerInside"
+        android:src="@drawable/playbutton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/user_imageView_puppy" />
+
+    <ImageButton
+        android:id="@+id/stopButton"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="24dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="정지 버튼"
+        android:scaleType="centerInside"
+        android:src="@drawable/resultstopbutton"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/user_imageView_puppy" />
+
     <TextView
         android:id="@+id/resultTextView"
         android:layout_width="wrap_content"
         android:layout_height="52dp"
         android:layout_gravity="center"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="336dp"
         android:padding="16dp"
         android:text="분석결과"
         android:textAlignment="center"
         android:textSize="15sp"
-        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/user_imageView_puppy" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/edit_analysis_result"
+    <TextView
+        android:id="@+id/txt_analysis_result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
-        android:hint="결과를 여기에 표시합니다..."
+        android:layout_marginTop="28dp"
+        android:text="분석 결과가 여기에 표시됩니다."
         android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/resultTextView" />
 
@@ -68,24 +79,23 @@
         android:layout_width="150dp"
         android:layout_height="50dp"
         android:layout_gravity="center"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="80dp"
         android:text="뒤로가기"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_analysis_result" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_analysis_result" />
 
     <Button
         android:id="@+id/btn_back_toHome"
         android:layout_width="150dp"
         android:layout_height="50dp"
         android:layout_gravity="center"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="32dp"
         android:text="홈으로"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_back_toAnalysis" />
-
-
+    
 </androidx.constraintlayout.widget.ConstraintLayout>
