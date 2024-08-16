@@ -20,26 +20,26 @@
         app:srcCompat="@drawable/puppy_logo" />
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="427dp"
+        android:id="@+id/textView5"
+        android:layout_width="200dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="80dp"
         android:text="간단하게 우리집 강아지의\n프로필을 입력해주세요."
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/iv_logo" />
 
     <Button
         android:id="@+id/btn_register"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="534dp"
-        android:background="#3A40AD"
+        android:layout_marginTop="76dp"
         android:text="강아지 프로필 입력하기"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
