@@ -13,4 +13,9 @@
     <string name="pomeranian">포메라니언</string>
     <string name="yorkshire_terrier">요크셔테리어</string>
     <string name="puppy_register">등록하기</string>
+    <string name="puppy_name">이름</string>
+    <string name="puppy_breed">종류</string>
+    <string name="rewrite_profile">프로필 다시 작성하기</string>
+    <string name="result_desc">프로필 작성이 완료됐다면 \n 음성 분석을 하러 가볼까요?</string>
+    <string name="go_analytics">녹음하러 가기</string>
 </resources>

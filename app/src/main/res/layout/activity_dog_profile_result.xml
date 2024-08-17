@@ -8,100 +8,110 @@
     tools:context=".DogProfileResultActivity">
 
     <ImageView
-        android:id="@+id/user_imageView_puppy"
-        android:layout_width="190dp"
-        android:layout_height="190dp"
-        android:layout_marginTop="44dp"
-        android:adjustViewBounds="true"
-        android:scaleType="fitCenter"
-        android:src="@drawable/puppy_logo"
+        android:id="@+id/iv_puppy_image"
+        android:layout_width="@dimen/image_size"
+        android:layout_height="@dimen/image_size"
+        android:contentDescription="@string/logo_desc"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/layout_puppy_name"
+        app:srcCompat="@drawable/puppy_logo" />
 
-    <TextView
-        android:id="@+id/puppy_name_text_view"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_puppy_name"
+        android:layout_width="@dimen/image_size"
         android:layout_height="wrap_content"
-        android:layout_marginTop="256dp"
-        android:layout_marginEnd="140dp"
-        android:gravity="center"
-        android:text="업동이"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/dog_name"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/iv_puppy_image"
+        app:layout_constraintBottom_toTopOf="@+id/layout_puppy_breed"
+        app:layout_constraintStart_toStartOf="@+id/iv_puppy_image"
+        app:layout_constraintEnd_toEndOf="@+id/iv_puppy_image">
+        <TextView
+            android:id="@+id/label_puppy_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/puppy_name"
+            android:textAlignment="center"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tv_puppy_name"
+        />
+        <TextView
+            android:id="@+id/tv_puppy_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            tools:text="업동이"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/label_puppy_name"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <TextView
-        android:id="@+id/dog_breed"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_puppy_breed"
+        android:layout_width="@dimen/image_size"
         android:layout_height="wrap_content"
-        android:layout_marginStart="164dp"
-        android:layout_marginTop="308dp"
-        android:gravity="center"
-        android:text="종류"
-        android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/selected_breed"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="308dp"
-        android:layout_marginEnd="148dp"
-        android:gravity="center"
-        android:text="말티즈"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/dog_breed"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/dog_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="164dp"
-        android:layout_marginTop="264dp"
-        android:gravity="center"
-        android:text="이름"
-        android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/layout_puppy_name"
+        app:layout_constraintBottom_toTopOf="@+id/btn_rewrite_profile"
+        app:layout_constraintStart_toStartOf="@+id/layout_puppy_name"
+        app:layout_constraintEnd_toEndOf="@+id/layout_puppy_name">
+        <TextView
+            android:id="@+id/label_puppy_breed"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/puppy_breed"
+            android:textAlignment="center"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tv_puppy_breed"
+            />
+        <TextView
+            android:id="@+id/tv_puppy_breed"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            tools:text="말티즈"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/label_puppy_breed"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <Button
         android:id="@+id/btn_rewrite_profile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="프로필 다시 작성하기"
+        android:text="@string/rewrite_profile"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/selected_breed" />
+        app:layout_constraintTop_toBottomOf="@+id/layout_puppy_breed"
+        app:layout_constraintBottom_toTopOf="@+id/tv_result_desc"/>
 
     <TextView
-        android:id="@+id/textView3"
-        android:layout_width="180dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="36dp"
-        android:gravity="center"
-        android:text="프로필 작성이 완료됐다면 \n 음성 분석을 하러 가볼까요?"
-        android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_rewrite_profile" />
-
-    <Button
-        android:id="@+id/btn_toAnalysis"
+        android:id="@+id/tv_result_desc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
-        android:text="녹음하러 가기"
+        android:text="@string/result_desc"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_rewrite_profile"
+        app:layout_constraintBottom_toTopOf="@+id/btn_go_analytics"/>
+
+    <Button
+        android:id="@+id/btn_go_analytics"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/go_analytics"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_result_desc"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
