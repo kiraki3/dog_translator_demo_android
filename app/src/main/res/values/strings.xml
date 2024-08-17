@@ -23,8 +23,11 @@
     <string name="analysis_desc3">발바닥을 탭하면 \n분석한 결과를 확인할 수 있습니다.</string>
     <string name="record_start_desc">녹음 시작</string>
     <string name="record_stop_desc">녹음 중지</string>
-    <string name="play_start_desc">재생 중지</string>
+    <string name="play_start_desc">재생 시작</string>
     <string name="play_stop_desc">재생 중지</string>
     <string name="go_analysis_result_desc">결과 확인하러가기</string>
+    <string name="label_analysis_result">분석결과</string>
+    <string name="back">뒤로가기</string>
+    <string name="go_home">홈으로</string>
 
 </resources>

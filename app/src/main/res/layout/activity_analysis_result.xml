@@ -1,101 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context=".AnalysisResultActivity">
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="isPlay"
+            type="java.lang.Boolean"/>
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <ImageView
+            android:id="@+id/iv_puppy_image"
+            android:layout_width="@dimen/image_size"
+            android:layout_height="@dimen/image_size"
+            android:contentDescription="@string/logo_desc"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/layout_audio_play"
+            app:srcCompat="@drawable/puppy_logo" />
 
-    <ImageView
-        android:id="@+id/user_imageView_puppy"
-        android:layout_width="190dp"
-        android:layout_height="190dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="32dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ubdong" />
+        <LinearLayout
+            android:id="@+id/layout_audio_play"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_puppy_image"
+            app:layout_constraintBottom_toTopOf="@+id/layout_analysis_result">
 
-    <ImageButton
-        android:id="@+id/playButton"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="24dp"
-        android:background="@android:color/transparent"
-        android:contentDescription="재생 버튼"
-        android:scaleType="centerInside"
-        android:src="@drawable/playbutton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/user_imageView_puppy" />
+            <ImageButton
+                android:id="@+id/ib_play_start"
+                android:layout_width="@dimen/button_size_sm"
+                android:layout_height="@dimen/button_size_sm"
+                android:background="@android:color/transparent"
+                android:scaleType="centerCrop"
+                android:contentDescription="@string/play_start_desc"
+                android:src="@drawable/playbutton"
+                android:visibility="@{!isPlay ? View.VISIBLE : View.GONE}"
+                />
 
-    <ImageButton
-        android:id="@+id/stopButton"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="24dp"
-        android:background="@android:color/transparent"
-        android:contentDescription="정지 버튼"
-        android:scaleType="centerInside"
-        android:src="@drawable/resultstopbutton"
-        android:visibility="gone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/user_imageView_puppy" />
+            <ImageButton
+                android:id="@+id/ib_play_stop"
+                android:layout_width="@dimen/button_size_sm"
+                android:layout_height="@dimen/button_size_sm"
+                android:background="@android:color/transparent"
+                android:scaleType="centerCrop"
+                android:contentDescription="@string/play_stop_desc"
+                android:src="@drawable/stopbutton"
+                tools:visibility="gone"
+                android:visibility="@{isPlay ? View.VISIBLE : View.GONE}"
+                />
+        </LinearLayout>
 
-    <TextView
-        android:id="@+id/resultTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="52dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="336dp"
-        android:padding="16dp"
-        android:text="분석결과"
-        android:textAlignment="center"
-        android:textSize="15sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <LinearLayout
+            android:id="@+id/layout_analysis_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layout_audio_play"
+            app:layout_constraintBottom_toTopOf="@+id/btn_back_analysis"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/label_analysis_result"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/label_analysis_result"
+                android:textAlignment="center"
+                 />
+            <TextView
+                android:id="@+id/tv_analysis_result"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_size"
+                android:textAlignment="center"
+                tools:text="와, 당신은 정말 대단해요!"
+                android:textStyle="bold"
+                />
+        </LinearLayout>
 
-    <TextView
-        android:id="@+id/txt_analysis_result"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:text="분석 결과가 여기에 표시됩니다."
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/resultTextView" />
+        <Button
+            android:id="@+id/btn_back_analysis"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/back"
+            app:layout_constraintTop_toBottomOf="@+id/layout_analysis_result"
+            app:layout_constraintBottom_toTopOf="@+id/btn_back_home"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
 
-    <Button
-        android:id="@+id/btn_back_toAnalysis"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="80dp"
-        android:text="뒤로가기"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_analysis_result" />
-
-    <Button
-        android:id="@+id/btn_back_toHome"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="32dp"
-        android:text="홈으로"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_back_toAnalysis" />
-    
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <Button
+            android:id="@+id/btn_back_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/go_home"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_back_analysis"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

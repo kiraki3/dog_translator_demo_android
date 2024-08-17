@@ -53,20 +53,6 @@ public class AnalysisActivity extends AppCompatActivity {
         });
     }
 
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        // 권한 요청 결과 처리
-        if (requestCode == REQUEST_PERMISSIONS) {
-            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                // 권한이 부여되면 아무 작업도 하지 않음
-            } else {
-                // 권한이 거부되면 앱 종료
-                finish();
-            }
-        }
-    }
-
     private void setDataBinding() {
         binding = ActivityAnalysisBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
@@ -159,6 +145,20 @@ public class AnalysisActivity extends AppCompatActivity {
         // 오디오 녹음 권한 확인 및 요청
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.RECORD_AUDIO}, REQUEST_PERMISSIONS);
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        // 권한 요청 결과 처리
+        if (requestCode == REQUEST_PERMISSIONS) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                // 권한이 부여되면 아무 작업도 하지 않음
+            } else {
+                // 권한이 거부되면 앱 종료
+                finish();
+            }
         }
     }
 }

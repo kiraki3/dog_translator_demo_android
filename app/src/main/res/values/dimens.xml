@@ -3,4 +3,5 @@
     <dimen name="image_size">200dp</dimen>
     <dimen name="button_size">125dp</dimen>
     <dimen name="button_size_sm">75dp</dimen>
+    <dimen name="margin_size">12dp</dimen>
 </resources>
