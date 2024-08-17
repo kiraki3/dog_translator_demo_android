@@ -1,3 +1,33 @@
 <resources>
     <string name="app_name">DogTranslator</string>
+    <string name="logo_desc">puppy image</string>
+    <string name="main_desc">안녕하세요\n강아지 번역기 입니다.</string>
+    <string name="main_start">시작하기</string>
+    <string name="register_desc">간단하게 우리집 강아지의\n프로필을 입력해주세요.</string>
+    <string name="register">강아지 프로필 입력하기</string>
+    <string name="select_image">사진 선택하기</string>
+    <string name="label_puppy_name">강아지 이름을 알려주세요</string>
+    <string name="hint_puppy_name">강아지 이름을 입력하세요</string>
+    <string name="label_puppy_breed">강아지 종류를 선택해주세요</string>
+    <string name="maltese">말티즈</string>
+    <string name="pomeranian">포메라니언</string>
+    <string name="yorkshire_terrier">요크셔테리어</string>
+    <string name="puppy_register">등록하기</string>
+    <string name="puppy_name">이름</string>
+    <string name="puppy_breed">종류</string>
+    <string name="rewrite_profile">프로필 다시 작성하기</string>
+    <string name="result_desc">프로필 작성이 완료됐다면 \n 음성 분석을 하러 가볼까요?</string>
+    <string name="go_analysis">녹음하러 가기</string>
+    <string name="puppy_name_suffix">(이)의 말을 들어보아요.</string>
+    <string name="analysis_desc2">마이크 버튼을 탭하여 녹음 후\n 재생 버튼을 탭하여 확인해주세요.</string>
+    <string name="analysis_desc3">발바닥을 탭하면 \n분석한 결과를 확인할 수 있습니다.</string>
+    <string name="record_start_desc">녹음 시작</string>
+    <string name="record_stop_desc">녹음 중지</string>
+    <string name="play_start_desc">재생 시작</string>
+    <string name="play_stop_desc">재생 중지</string>
+    <string name="go_analysis_result_desc">결과 확인하러가기</string>
+    <string name="label_analysis_result">분석결과</string>
+    <string name="back">뒤로가기</string>
+    <string name="go_home">홈으로</string>
+
 </resources>

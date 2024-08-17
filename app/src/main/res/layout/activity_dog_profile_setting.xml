@@ -8,110 +8,100 @@
     tools:context=".DogProfileSettingActivity">
 
     <ImageView
-        android:id="@+id/imageView_puppy"
-        android:layout_width="190dp"
-        android:layout_height="190dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="46dp"
-        android:adjustViewBounds="true"
-        android:scaleType="fitCenter"
-        android:src="@drawable/puppy_logo"
+        android:id="@+id/iv_puppy_image"
+        android:layout_width="@dimen/image_size"
+        android:layout_height="@dimen/image_size"
+        android:contentDescription="@string/logo_desc"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btn_select_image"
+        app:srcCompat="@drawable/puppy_logo" />
 
     <Button
-        android:id="@+id/btn_imageUpload"
+        android:id="@+id/btn_select_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="사진 선택하기"
+        android:text="@string/select_image"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView_puppy" />
+        app:layout_constraintBottom_toTopOf="@+id/label_puppy_name"
+        app:layout_constraintTop_toBottomOf="@+id/iv_puppy_image" />
 
     <TextView
-        android:id="@+id/write_name"
-        android:layout_width="180dp"
+        android:id="@+id/label_puppy_name"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:gravity="center"
-        android:text="강아지 이름을 알려주세요"
-        android:textSize="14sp"
+        android:text="@string/label_puppy_name"
         android:textStyle="bold"
+        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_imageUpload" />
+        app:layout_constraintBottom_toTopOf="@+id/et_puppy_name"
+        app:layout_constraintTop_toBottomOf="@+id/btn_select_image" />
 
     <EditText
-        android:id="@+id/puppy_name"
-        android:layout_width="160dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="8dp"
-        android:hint="이름을 입력하세요"
-        android:textAlignment="textStart"
-        android:textColorHint="#8A313133"
-        android:textSize="15sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/write_name" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="432dp"
-        android:gravity="center"
-        android:text="강아지 종류를 선택해주세요"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.51"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <RadioGroup
-        android:id="@+id/radioGroup_dog_breed"
+        android:id="@+id/et_puppy_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:autofillHints=""
+        android:hint="@string/hint_puppy_name"
+        android:inputType="text"
+        android:textColorHint="@color/hint_text_color"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2">
+        app:layout_constraintTop_toBottomOf="@+id/label_puppy_name"
+        app:layout_constraintBottom_toTopOf="@+id/label_puppy_breed"/>
+
+    <TextView
+        android:id="@+id/label_puppy_breed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/label_puppy_breed"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_puppy_name"
+        app:layout_constraintBottom_toTopOf="@+id/rg_puppy_breed" />
+
+    <RadioGroup
+        android:id="@+id/rg_puppy_breed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/label_puppy_breed"
+        app:layout_constraintBottom_toTopOf="@+id/btn_register">
 
         <RadioButton
-            android:id="@+id/radioButton_maltese"
+            android:id="@+id/rb_maltese"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="말티즈" />
+            android:text="@string/maltese" />
 
         <RadioButton
-            android:id="@+id/radioButton_pomeranian"
+            android:id="@+id/rb_pomeranian"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="포메라니언" />
+            android:text="@string/pomeranian" />
 
         <RadioButton
-            android:id="@+id/radioButton_yorkshire_terrier"
+            android:id="@+id/rb_yorkshire_terrier"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="요크셔테리어" />
+            android:text="@string/yorkshire_terrier" />
     </RadioGroup>
 
     <Button
         android:id="@+id/btn_register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="636dp"
-        android:text="등록하기"
+        android:text="@string/puppy_register"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/rg_puppy_breed"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

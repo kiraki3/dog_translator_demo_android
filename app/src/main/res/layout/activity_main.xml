@@ -8,34 +8,35 @@
     tools:context=".MainActivity">
 
     <ImageView
-        android:id="@+id/iv_logo"
-        android:layout_width="230.4dp"
-        android:layout_height="227dp"
-        android:layout_marginTop="124dp"
+        android:id="@+id/iv_main_logo"
+        android:layout_width="@dimen/image_size"
+        android:layout_height="@dimen/image_size"
+        android:contentDescription="@string/logo_desc"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tv_main_desc"
         app:srcCompat="@drawable/puppy_logo" />
 
     <TextView
-        android:id="@+id/textView6"
-        android:layout_width="200dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="80dp"
-        android:text="안녕하세요\n강아지 번역기 입니다."
+        android:id="@+id/tv_main_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/main_desc"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_logo" />
+        app:layout_constraintTop_toBottomOf="@+id/iv_main_logo"
+        app:layout_constraintBottom_toTopOf="@+id/btn_main_start" />
 
     <Button
-        android:id="@+id/btn_start"
-        android:layout_width="200dp"
+        android:id="@+id/btn_main_start"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="76dp"
-        android:text="시작하기"
+        android:text="@string/main_start"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_main_desc"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

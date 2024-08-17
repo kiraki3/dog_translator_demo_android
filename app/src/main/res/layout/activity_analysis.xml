@@ -1,121 +1,160 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     tools:context=".AnalysisActivity">
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="isRecord"
+            type="java.lang.Boolean"/>
+        <variable
+            name="isPlay"
+            type="java.lang.Boolean"/>
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
 
-    <ImageView
-        android:id="@+id/user_imageView_puppy"
-        android:layout_width="190dp"
-        android:layout_height="190dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="32dp"
-        android:adjustViewBounds="true"
-        android:scaleType="fitCenter"
-        android:src="@drawable/puppy_logo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <ImageView
+            android:id="@+id/iv_puppy_image"
+            android:layout_width="@dimen/image_size"
+            android:layout_height="@dimen/image_size"
+            android:contentDescription="@string/logo_desc"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/layout_analysis_desc1"
+            app:srcCompat="@drawable/puppy_logo" />
 
-    <TextView
-        android:id="@+id/puppy_name_text_view"
-        android:layout_width="200dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="12dp"
-        android:gravity="center"
-        android:text="업동이의 말을 들어보아요."
-        android:textAlignment="center"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/user_imageView_puppy" />
+        <LinearLayout
+            android:id="@+id/layout_analysis_desc1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_puppy_image"
+            app:layout_constraintBottom_toTopOf="@+id/tv_analysis_desc2">
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="536dp"
-        android:text="발바닥을 탭하면 \n분석한 결과를 확인할 수 있습니다. "
-        android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.507"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/tv_puppy_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                tools:text="업동이"
+                />
+            <TextView
+                android:id="@+id/tv_puppy_name_suffix"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/puppy_name_suffix"
+                />
+        </LinearLayout>
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="마이크 버튼을 탭하여 녹음 후\n 재생 버튼을 탭하여 확인해주세요."
-        android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/puppy_name_text_view" />
+        <TextView
+            android:id="@+id/tv_analysis_desc2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/analysis_desc2"
+            app:layout_constraintTop_toBottomOf="@+id/layout_analysis_desc1"
+            app:layout_constraintBottom_toTopOf="@+id/layout_audio_record"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
 
-    <ImageButton
-        android:id="@+id/stopPlayButton"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_marginTop="20dp"
-        android:background="@android:color/transparent"
-        android:contentDescription="재생 중지"
-        android:scaleType="centerInside"
-        android:src="@drawable/stopbutton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        <LinearLayout
+            android:id="@+id/layout_audio_record"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_analysis_desc2"
+            app:layout_constraintBottom_toTopOf="@+id/layout_audio_play">
 
-    <ImageButton
-        android:id="@+id/recordButton"
-        android:layout_width="125dp"
-        android:layout_height="125dp"
-        android:layout_marginTop="4dp"
-        android:background="@android:color/transparent"
-        android:contentDescription="녹음 시작"
-        android:scaleType="centerInside"
-        android:src="@drawable/micimage"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+            <ImageButton
+                android:id="@+id/ib_record_start"
+                android:layout_width="@dimen/button_size"
+                android:layout_height="@dimen/button_size"
+                android:background="@android:color/transparent"
+                android:scaleType="centerCrop"
+                android:contentDescription="@string/record_start_desc"
+                android:src="@drawable/micimage"
+                android:visibility="@{!isRecord ? View.VISIBLE : View.GONE}"
+                 />
 
-    <ImageButton
-        android:id="@+id/playButton"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:background="@android:color/transparent"
-        android:contentDescription="재생 시작"
-        android:scaleType="centerInside"
-        android:visibility="gone"
-        android:src="@drawable/playbutton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recordButton" />
+            <ImageButton
+                android:id="@+id/ib_record_stop"
+                android:layout_width="@dimen/button_size"
+                android:layout_height="@dimen/button_size"
+                android:background="@android:color/transparent"
+                android:scaleType="centerCrop"
+                android:contentDescription="@string/record_stop_desc"
+                android:src="@drawable/recordstop"
+                tools:visibility="gone"
+                android:visibility="@{isRecord ? View.VISIBLE : View.GONE}"
+                />
 
-    <ImageButton
-        android:id="@+id/stopRecordButton"
-        android:layout_width="125dp"
-        android:layout_height="125dp"
-        android:layout_marginTop="4dp"
-        android:background="@android:color/transparent"
-        android:contentDescription="녹음 중지"
-        android:scaleType="centerInside"
-        android:src="@drawable/recordstop"
-        android:visibility="gone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_audio_play"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layout_audio_record"
+            app:layout_constraintBottom_toTopOf="@+id/tv_analysis_desc3">
+            <ImageButton
+                android:id="@+id/ib_play_start"
+                android:layout_width="@dimen/button_size_sm"
+                android:layout_height="@dimen/button_size_sm"
+                android:background="@android:color/transparent"
+                android:scaleType="centerCrop"
+                android:contentDescription="@string/play_start_desc"
+                android:src="@drawable/playbutton"
+                android:visibility="@{!isPlay ? View.VISIBLE : View.GONE}"
+                />
+
+            <ImageButton
+                android:id="@+id/ib_play_stop"
+                android:layout_width="@dimen/button_size_sm"
+                android:layout_height="@dimen/button_size_sm"
+                android:background="@android:color/transparent"
+                android:scaleType="centerCrop"
+                android:contentDescription="@string/play_stop_desc"
+                android:src="@drawable/stopbutton"
+                tools:visibility="gone"
+                android:visibility="@{isPlay ? View.VISIBLE : View.GONE}"
+                />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_analysis_desc3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/analysis_desc3"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layout_audio_play"
+            app:layout_constraintBottom_toTopOf="@+id/ib_go_analysis_result"
+            />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageButton
+            android:id="@+id/ib_go_analysis_result"
+            android:layout_width="@dimen/button_size"
+            android:layout_height="@dimen/button_size"
+            android:background="@android:color/transparent"
+            android:scaleType="centerCrop"
+            android:contentDescription="@string/go_analysis_result_desc"
+            android:src="@drawable/stopbutton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_analysis_desc3"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
