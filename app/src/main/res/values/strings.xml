@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">DogTranslator</string>
-    <string name="main_logo_desc">puppy image</string>
+    <string name="logo_desc">puppy image</string>
     <string name="main_desc">안녕하세요\n강아지 번역기 입니다.</string>
     <string name="main_start">시작하기</string>
+    <string name="register_desc">간단하게 우리집 강아지의\n프로필을 입력해주세요.</string>
+    <string name="register">강아지 프로필 입력하기</string>
 </resources>
