@@ -50,7 +50,7 @@ public class DogProfileResultActivity extends AppCompatActivity {
             }
         });
 
-        binding.btnGoAnalytics.setOnClickListener(new View.OnClickListener() {
+        binding.btnGoAnalysis.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(DogProfileResultActivity.this, AnalysisActivity.class);
@@ -83,11 +83,8 @@ public class DogProfileResultActivity extends AppCompatActivity {
             binding.tvPuppyName.setText(mPuppyName);
             puppyName = mPuppyName;
         }
-
         if (puppyBreed != null && !puppyBreed.isEmpty()) {
             binding.tvPuppyBreed.setText(puppyBreed);
         }
-
-
     }
 }

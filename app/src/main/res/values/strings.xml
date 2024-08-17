@@ -17,5 +17,14 @@
     <string name="puppy_breed">종류</string>
     <string name="rewrite_profile">프로필 다시 작성하기</string>
     <string name="result_desc">프로필 작성이 완료됐다면 \n 음성 분석을 하러 가볼까요?</string>
-    <string name="go_analytics">녹음하러 가기</string>
+    <string name="go_analysis">녹음하러 가기</string>
+    <string name="puppy_name_suffix">(이)의 말을 들어보아요.</string>
+    <string name="analysis_desc2">마이크 버튼을 탭하여 녹음 후\n 재생 버튼을 탭하여 확인해주세요.</string>
+    <string name="analysis_desc3">발바닥을 탭하면 \n분석한 결과를 확인할 수 있습니다.</string>
+    <string name="record_start_desc">녹음 시작</string>
+    <string name="record_stop_desc">녹음 중지</string>
+    <string name="play_start_desc">재생 중지</string>
+    <string name="play_stop_desc">재생 중지</string>
+    <string name="go_analysis_result_desc">결과 확인하러가기</string>
+
 </resources>
