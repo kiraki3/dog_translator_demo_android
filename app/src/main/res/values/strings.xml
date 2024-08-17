@@ -5,4 +5,12 @@
     <string name="main_start">시작하기</string>
     <string name="register_desc">간단하게 우리집 강아지의\n프로필을 입력해주세요.</string>
     <string name="register">강아지 프로필 입력하기</string>
+    <string name="select_image">사진 선택하기</string>
+    <string name="label_puppy_name">강아지 이름을 알려주세요</string>
+    <string name="hint_puppy_name">강아지 이름을 입력하세요</string>
+    <string name="label_puppy_breed">강아지 종류를 선택해주세요</string>
+    <string name="maltese">말티즈</string>
+    <string name="pomeranian">포메라니언</string>
+    <string name="yorkshire_terrier">요크셔테리어</string>
+    <string name="puppy_register">등록하기</string>
 </resources>
